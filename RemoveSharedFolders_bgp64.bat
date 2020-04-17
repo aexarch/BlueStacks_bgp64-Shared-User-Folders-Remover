@@ -1,5 +1,5 @@
 @echo off
-Set ScriptDir=%cd%
+set "ScriptDir=%cd%"
 REG QUERY "HKEY_LOCAL_MACHINE\Software\BlueStacks_bgp64">nul
 if %ERRORLEVEL% EQU 1 goto NOTBGP64
 FOR /F "usebackq tokens=2,* skip=2" %%A IN (`REG QUERY "HKEY_LOCAL_MACHINE\Software\BlueStacks_bgp64" /v InstallDir`) DO (
